@@ -14,4 +14,5 @@ For security reasons, only part of the project is uploaded to this repository. C
 
 This platform streamlines the quoting process for industrial machinery and robotic components, enhancing efficiency and communication between the company and its clients while ensuring data security.
 
-https://github.com/nataliacancinogarcia/Machinery_Parts/blob/main/Catalog.png
+![Banner](https://github.com/nataliacancinogarcia/Machinery_Parts/blob/main/Catalog.png) <!-- Optional banner image -->
+
