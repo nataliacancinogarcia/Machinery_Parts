@@ -4,9 +4,13 @@ This project is a web-based catalog designed for an automotive assembly company 
 Key Features:
 
 •Dynamic Parts Catalog: Displays a categorized selection of robotics and machinery parts with detailed specifications.
+
 •Quote Request System: Users can select multiple parts, specify the quantity, and generate a quote request directly from the website.
+
 •Automated PDF Generation: Once a quote is requested, a PDF document is automatically created, summarizing the selected parts and quantities.
+
 •Secure Notification System: To ensure confidentiality, the company’s internal team—whose details remain private for security reasons—receives an email notification whenever a new quote request is submitted.
+
 •Admin Dashboard: The company’s team can log into a secure internal portal to view and manage customer quotes efficiently.
 
 Security & Privacy
