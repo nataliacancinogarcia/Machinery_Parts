@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS Pump</title>
+    <link rel="stylesheet" href="../css/parts.css">
+    <style>
+      
+        .group {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            padding: 20px;
+        }
+
+       
+        .group img {
+            width:  auto;
+            height: 450px;            
+            object-fit: cover; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease; 
+        }
+
+        
+        .zoom img:hover {
+            transform: scale(1.5);
+            z-index: 2;
+        }        
+    </style>
+</head>
+<body>
+
+    <!--Upper Botons  -->
+    <div class="top-buttons">
+        <img src="../images/home.png" alt="Home" class="home-icon" onclick="location.href='../index.html'">
+        <img src="../images/cart.png" alt="Cart" class="cart-icon" onclick="location.href='../print.html'">
+    </div>
+    
+    <h1>ISS Pump</h1>
+
+   
+    <div class="group zoom">
+        <img src="../images/ISS_PUMP_2.jpg" alt="ISS PUMP 2" onclick="location.href='iss_pump_1.html'">
+    </div>
+
+
+    <div class="group zoom">
+        <img src="../images/ISS_PUMP_3.jpg" alt="ISS PUMP 4" onclick="location.href='iss_pump_2.html'">
+    </div>
+
+
+    <div class="group zoom">
+        <img src="../images/ISS_PUMP_6.jpg" alt="ISS PUMP 6" onclick="location.href='iss_pump_3.html'">
+        <img src="../images/ISS_PUMP_7.jpg" alt="ISS PUMP 7" onclick="location.href='iss_pump_4.html'">
+    </div>
+
+
+    <div class="group no-zoom">
+        <img src="../images/ISS_PUMP_9.jpg" alt="ISS PUMP 9">
+    </div>
+
+
+    <div class="group zoom">
+        <img src="../images/ISS_PUMP_10.jpg" alt="ISS PUMP 10" onclick="location.href='iss_pump_5.html'">
+
+    </div>
+    <button onclick="location.href='iss.html'">Back</button>
+</body>
+</html>

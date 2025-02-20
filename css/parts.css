@@ -1,0 +1,83 @@
+
+body {
+    background-color: #22a69a;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+h1 {
+    margin: 20px 0;
+    font-size: 3.5em;
+    color: white;
+}
+
+
+.top-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.home-icon, .cart-icon {
+    width: 80px; 
+    height: auto;
+    cursor: pointer;
+    padding: 5px; 
+    margin: 0 10px; 
+}
+
+
+/* Botón Back */
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.button-container button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.button-container button:active {
+    transform: scale(0.95);
+}
+
+button {
+    margin: 20px auto; 
+    display: block;
+    padding: 15px 30px; 
+    font-size: 18px; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

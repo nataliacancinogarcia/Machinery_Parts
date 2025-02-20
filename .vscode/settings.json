@@ -1,0 +1,25 @@
+{
+    "liveServer.settings.port": 5501,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Parts_files",
+            "database": "Machinery_Parts",
+            "username": "postgres"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Files",
+            "username": "postgres",
+            "database": "Machinery_Parts",
+            "password": "Rafael2023",
+            "connectionTimeout": 30
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizaciones Guardadas</title>
+    <link rel="stylesheet" href="../css/cotizaciones.css">
+</head>
+<body>
+
+        <!--Upper Botons  -->
+    <div class="top-buttons">
+        <img src="../images/home.png" alt="Home" class="home-icon" onclick="location.href='../index.html'">
+    </div>
+    
+    <div class="logout-container">
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+    </div>
+
+    <h1>Archivos de Cotización Guardados</h1>
+
+    <div class="file-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Archivo</th>
+                    <th>Descargar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="fileTable">
+                <tr>
+                    <td colspan="3">Cargando archivos...</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="clearAllBtn" class="clear-btn" onclick="clearAllFiles()">Limpiar Todo</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!sessionStorage.getItem("isAuthenticated")) {
+                window.location.href = "../index.html";  
+            }
+            fetchFiles();
+        });
+
+        function logout() {
+            sessionStorage.removeItem("isAuthenticated");
+            window.location.href = "../index.html";  
+        }
+
+        async function fetchFiles() {
+            try {
+                const response = await fetch('http://localhost:5002/list-uploads');
+                const data = await response.json();
+
+                const fileTable = document.getElementById('fileTable');
+                const clearBtn = document.getElementById('clearAllBtn');
+                fileTable.innerHTML = '';
+
+                if (data.archivos.length === 0) {
+                    fileTable.innerHTML = '<tr><td colspan="3">No hay archivos guardados</td></tr>';
+                    clearBtn.style.display = "none"; 
+                    return;
+                }
+
+                clearBtn.style.display = "block"; // Mostrar si hay archivos
+
+                data.archivos.forEach(file => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${file}</td>
+                        <td><a href="http://localhost:5002/uploads/${file}" target="_blank" class="download-btn">Descargar</a></td>
+                        <td><button class="delete-btn" onclick="deleteFile('${file}')">Eliminar</button></td>
+                    `;
+                    fileTable.appendChild(row);
+                });
+
+            } catch (error) {
+                console.error('Error al obtener archivos:', error);
+                document.getElementById('fileTable').innerHTML = '<tr><td colspan="3">Error al cargar archivos</td></tr>';
+            }
+        }
+
+        async function deleteFile(fileName) {
+            if (confirm(`¿Seguro que deseas eliminar el archivo ${fileName}?`)) {
+                try {
+                    await fetch(`http://localhost:5002/delete-file/${fileName}`, { method: 'DELETE' });
+                    fetchFiles();
+                } catch (error) {
+                    console.error('Error al eliminar el archivo:', error);
+                }
+            }
+        }
+
+        async function clearAllFiles() {
+            if (confirm('¿Seguro que deseas eliminar todos los archivos?')) {
+                try {
+                    const response = await fetch('http://localhost:5002/list-uploads');
+                    const data = await response.json();
+
+                    for (const file of data.archivos) {
+                        await fetch(`http://localhost:5002/delete-file/${file}`, { method: 'DELETE' });
+                    }
+
+                    fetchFiles();
+                } catch (error) {
+                    console.error('Error al limpiar archivos:', error);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Pump_2</title>
+    <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+        <!--Upper Botons  -->
+    <div class="top-buttons">
+
+        
+        <img src="../images/home.png" alt="Home" class="home-icon" onclick="location.href='../index.html'">
+        <img src="../images/cart.png" alt="Cart" class="cart-icon" onclick="addToCartAndGo()">
+    </div>
+    <div class="image-container">
+        <img src="../images/HEM_PUMP_3.jpg" alt="Imagen HEM_PUMP_3" onmousemove="zoomImage(event)">
+    </div>
+    <div class="table-title">
+        86417.500006/86417.500007 Single Barrel Pump PVC
+    </div>
+    <table id="data-table">
+        <thead>
+            <tr id="table-header"></tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/pdf.js"></script>
+    <script>
+        function zoomImage(event) {
+            const container = event.currentTarget.parentElement;
+            const image = event.currentTarget;
+            const rect = container.getBoundingClientRect();
+
+            const offsetX = event.clientX - rect.left;
+            const offsetY = event.clientY - rect.top;
+
+            const percentX = (offsetX / rect.width) * 100;
+            const percentY = (offsetY / rect.height) * 100;
+
+            image.style.transformOrigin = `${percentX}% ${percentY}%`;
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch('http://localhost:3000/api/hem_pump_2');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                populateTable(data);
+            } catch (error) {
+                console.error('Error loading data:', error);
+                alert('Error loading data. Please try again later.');
+            }
+        }
+
+        function populateTable(data) {
+            const tableHeader = document.getElementById('table-header');
+            const tableBody = document.getElementById('table-body');
+
+            tableHeader.innerHTML = ''; 
+            tableBody.innerHTML = '';
+
+            if (data.length > 0) {
+                const headers = Object.keys(data[0]);
+
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header.toUpperCase();
+                    tableHeader.appendChild(th);
+                });
+
+                const thSelect = document.createElement('th');
+                thSelect.textContent = 'ADD TO CART';
+                tableHeader.appendChild(thSelect);
+
+                data.forEach((row, index) => {
+                    const tr = document.createElement('tr');
+
+                    headers.forEach(header => {
+                        const td = document.createElement('td');
+                        td.textContent = row[header];
+                        tr.appendChild(td);
+                    });
+
+                    const tdSelect = document.createElement('td');
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.min = 0;
+                    input.value = 0;
+                    input.className = 'quantity-input';
+                    input.dataset.index = index;
+                    tdSelect.appendChild(input);
+                    tr.appendChild(tdSelect);
+
+                    tableBody.appendChild(tr);
+                });
+            } else {
+                alert('No data found.');
+            }
+        }
+
+        window.onload = loadData;
+    </script>
+    <button onclick="location.href='hem_pump.html'">Back</button>
+
+</body>
+</html>

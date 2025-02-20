@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS Applicator</title>
+    <link rel="stylesheet" href="../css/parts.css">
+    <style>
+
+        .group-1, .group-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+
+        .group-1 img, .group-2 img {
+            width: auto;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+
+        .group-2 img:hover {
+            transform: scale(1.5);
+            z-index: 2;
+        }
+    </style>    
+</head>
+<body>
+
+    <div class="top-buttons">
+        <img src="../images/home.png" alt="Home" class="home-icon" onclick="location.href='../index.html'">
+        <img src="../images/cart.png" alt="Cart" class="cart-icon" onclick="location.href='../print.html'">
+    </div>
+
+    <h1>ISS Applicator</h1>
+
+    <div class="group-1">
+        <img src="../images/ISS_APPLIC_2.jpg" alt="ISS Applicator 2">
+    </div>
+
+    <div class="group-2">
+        <img src="../images/ISS_APPLIC_3.jpg" alt="ISS Applicator 3" onclick="location.href='iss_app_1.html'">
+        <img src="../images/ISS_APPLIC_4.jpg" alt="ISS Applicator 4" onclick="location.href='iss_app_2.html'">
+    </div>
+    <button onclick="location.href='iss.html'">Back</button>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Lis</title>
+    <link rel="stylesheet" href="./css/cart.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <div class="top-buttons">
+        <img src="./images/home.png" alt="Home" class="cart-icon" onclick="location.href='./index.html'">
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="sidebar">
+        <ul>
+            <li>Menú</li>
+            <li>
+                <a href="./pages/iss.html">ISS</a>
+                <ul class="submenu">
+                    <li><a href="./pages/iss_app.html">ISS Aplicador</a></li>
+                    <li><a href="./pages/iss_meter.html">ISS Meter</a></li>
+                    <li><a href="./pages/iss_pump.html">ISS Pump</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="./pages/hem.html">HEM</a>
+                <ul class="submenu">
+                    <li><a href="./pages/hem_app.html">HEM Aplicador</a></li>
+                    <li><a href="./pages/hem_meter.html">HEM Meter</a></li>
+                    <li><a href="./pages/hem_pump.html">HEM Pump</a></li>
+                </ul>
+            </li>
+          
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Cart List</h1>
+
+        <!-- Centered Table -->
+        <div class="table-container">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>ITEM</th>
+                        <th>ARTICLE NUMBER</th>
+                        <th>DESIGNATION</th>
+                        <th>QUANTITY</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+            
+            <div class="button-container">
+                <button onclick="clearCart()">Clean All</button>
+            </div>
+        </div>
+
+        <!-- Client Information -->
+        <div class="client-info-container">
+            <h3>Client Information</h3>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="company" placeholder="Company" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <div>
+                <button onclick="Quote()">Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/cart.js"></script>
+    <script src="./js/pdf.js"></script>
+
+</body>
+</html>

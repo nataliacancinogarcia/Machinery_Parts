@@ -1,0 +1,90 @@
+/* General style */
+body {
+    background: url('../images/MAIN.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+/* Centered login container */
+.login-container {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Spacing between elements */
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Password container with button */
+.password-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    flex: 1;
+    margin: 0;
+}
+
+/* Login button with extra spacing below */
+.login-container button {
+    width: 100%;
+    padding: 14px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 15px; 
+}
+
+.login-container button:hover {
+    background: #0056b3;
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Home button at the top */
+.top-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Home icon */
+.home-icon {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+}

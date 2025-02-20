@@ -1,0 +1,114 @@
+
+body {
+    background: url('../images/MAIN.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+
+.content {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    max-width: 600px;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.button-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 45%;
+}
+
+.button-box h2 {
+    margin-bottom: 15px;
+}
+
+.button-box button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 5px 0;
+}
+
+.button-box button:hover {
+    background: #0056b3;
+}
+
+
+.top-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 10px;
+    z-index: 1000;
+}
+
+
+.home-icon, .cart-icon {
+    width: 80px; 
+    height: auto;
+    cursor: pointer;
+    padding: 5px; 
+    margin: 0 10px; 
+}
+
+
+.admin-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.admin-icon:hover {
+    transform: scale(1.1);
+}
