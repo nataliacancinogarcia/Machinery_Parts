@@ -2,6 +2,7 @@
 This project is a web-based catalog designed for an automotive assembly company that specializes in robotics and industrial machinery. The catalog provides a comprehensive list of machine parts used in the production process, allowing users to browse through different components and select the ones they wish to request a quote for.
 
 Key Features:
+
 	•Dynamic Parts Catalog: Displays a categorized selection of robotics and machinery parts with detailed specifications.
  
 	•Quote Request System: Users can select multiple parts, specify the quantity, and generate a quote request directly from the website.
